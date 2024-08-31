@@ -1,1 +1,1 @@
-# node.js-basics
+# Node.JS Shop-Project
