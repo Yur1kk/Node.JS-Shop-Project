@@ -4,9 +4,11 @@ const express = require('express');
 
 
 const router = express.Router();
+const adminData = require('./admin');
+
 
 router.get('/', (req, res, next) => {
-    console.log('In main middleware!');
+    console.log(adminData.products);
     res.status(200).sendFile(path.join(__dirname, '..', 'views', 'shop.html'));
 });
 
