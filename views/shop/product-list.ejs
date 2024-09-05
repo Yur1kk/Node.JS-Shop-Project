@@ -26,8 +26,8 @@
                                         <%= product.description %>
                                     </p>
                                 </div>
-                                <a href="/products/<%= product.id%>" class="btn"><Details></Details></a>
                                 <div class="card__actions">
+                                    <a href="/products/<%= product.id %>" class="btn">Details</a>
                                     <%- include('../includes/add-to-cart.ejs', {product: product})%>
                                 </div>
                             </article>
