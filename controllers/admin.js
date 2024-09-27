@@ -17,6 +17,15 @@ exports.getAddProduct = (req, res, next) => {
     res.redirect("/");
   };
 
+  exports.getEditProduct = (req, res, next) => {
+    const editMode = req.query.edit;
+    res.status(200).render("admin/edit-product", {
+      pageTitle: "Edit Product",
+      path: "/admin/edit-product",
+      editing: editMode
+    });
+  };
+
   exports.getProducts = (req, res, next) => {
     Product.fetchAll((products) => {
         res.status(200).render("admin/products", {
