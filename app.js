@@ -31,9 +31,22 @@ sequelize
 //.sync({force: true})
 .sync()
 .then(result => {
+     return User.findByPk(1);
     // console.log(result);
-    app.listen(3000);
 })
+.then(user => {
+    if (!user) {
+        return User.create({
+            name: 'Yurii',
+            email: 'urasor004@gmail.com'
+        });
+    }
+    return user;
+})
+.then(user => {
+    console.log(user);
+    app.listen(3000);
+    })
 .catch(err => {
     console.log(err);
 });
